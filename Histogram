@@ -1,0 +1,13 @@
+import cv2 as cv
+import matplotlib.pyplot as plt
+import numpy as np
+img = cv.imread ("north.jpg",0)
+yukseklik = img.shape[0]
+genislik = img.shape[1]
+histogra =np.zeros([256])
+for x in range (0,yukseklik):
+    for y in range (0,genislik):
+        histogra [img[x,y]] +=1
+plt.plot(histogra)
+plt.title("histogra")
+plt.show()
