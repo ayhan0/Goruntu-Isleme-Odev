@@ -1,0 +1,13 @@
+import cv2 as cv
+
+img = cv.imread ("orkide.jpg",0)
+yukseklik = img.shape[0]
+genislik = img.shape[1]
+cv.imshow("original",img)
+cv.waitKey()
+
+for x in range (0,yukseklik):
+    for y in range (0,genislik):
+        img[x][y] = 255-img[x][y]
+cv.imshow("inverted",img)
+cv.waitKey()
